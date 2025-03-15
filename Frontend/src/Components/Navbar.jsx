@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router'
-import { useUser } from '../context/userContext'
+import { useUser } from '../Context/userContext'
 const Navbar = () => {
     const {user}=useUser();
     const [isOpen, setIsOpen] = useState(false)

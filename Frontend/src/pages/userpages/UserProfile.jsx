@@ -1,5 +1,5 @@
 import React from "react";
-import { useUser } from "../../context/userContext";
+import { useUser } from "../../Context/userContext";
 import { Link } from "react-router-dom";
 
 const UserProfile = () => {
