@@ -16,7 +16,7 @@ const UserProtectWrapper = ({ children }) => {
 
         const checkUser = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/profile`, {
+                const response = await axios.get(`${import.meta.env.VITE_URL}/users/profile`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     },
