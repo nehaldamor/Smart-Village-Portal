@@ -3,10 +3,10 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const AdminProtectedWrapper = ({
+const AdminProtectedWrapper = async ({
     children
 }) => {
-    const token = localStorage.getItem('token')
+    const token = await localStorage.getItem('token')
     const navigate = useNavigate()
     const [ isLoading, setIsLoading ] = useState(true)
 
