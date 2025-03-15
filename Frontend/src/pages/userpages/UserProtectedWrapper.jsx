@@ -3,31 +3,38 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const UserProtectWrapper = ({ children }) => {
-    const token = localStorage.getItem('token'); // Removed `await`
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
+    const [token, setToken] = useState(localStorage.getItem('token')); // Store token in state
 
     useEffect(() => {
         if (!token) {
+            console.log("No token found, redirecting to login...");
             navigate('/login');
             return;
         }
 
-        axios.get(`${import.meta.env.VITE_BASE_URL}/users/profile`, {
-            headers: {
-                Authorization: `Bearer ${token}`
+        const checkUser = async () => {
+            try {
+                const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/profile`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    },
+                    withCredentials: true // Ensure cookies are sent if needed
+                });
+
+                if (response.status === 200) {
+                    setIsLoading(false);
+                }
+            } catch (error) {
+                console.error("Authentication failed, redirecting to login...");
+                localStorage.removeItem('token');
+                navigate('/login');
             }
-        })
-        .then(response => {
-            if (response.status === 200) {
-                setIsLoading(false);
-            }
-        })
-        .catch(err => {
-            localStorage.removeItem('token');
-            navigate('/login');
-        });
-    }, [navigate]); // Removed `token` from dependencies
+        };
+
+        checkUser();
+    }, [token, navigate]); // Token added to dependencies
 
     if (isLoading) {
         return <div>Loading...</div>;
