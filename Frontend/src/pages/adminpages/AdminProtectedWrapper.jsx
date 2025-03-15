@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const UserProtectWrapper = ({ children }) => {
+const AdminProtectedWrapper = ({ children }) => {
     const token = localStorage.getItem('token'); // Removed `await`
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +13,7 @@ const UserProtectWrapper = ({ children }) => {
             return;
         }
 
-        axios.get(`${import.meta.env.VITE_BASE_URL}/admins/profile`, {
+        axios.get(`${import.meta.env.VITE_URL}/admins/profile`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -25,7 +25,7 @@ const UserProtectWrapper = ({ children }) => {
         })
         .catch(err => {
             localStorage.removeItem('token');
-            navigate('/login');
+            navigate('/admin-login');
         });
     }, [navigate]); // Removed `token` from dependencies
 
@@ -36,4 +36,4 @@ const UserProtectWrapper = ({ children }) => {
     return <>{children}</>;
 };
 
-export default UserProtectWrapper;
+export default AdminProtectedWrapper;
