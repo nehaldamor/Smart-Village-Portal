@@ -8,12 +8,10 @@ const UserProtectWrapper = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        console.log("Stored Token:", token);
-        console.log("API URL:", import.meta.env.VITE_URL); // Debugging URL
 
         if (!token) {
-            console.warn("No token found. Redirecting to login.");
-            navigate('/admin-register');
+          
+            navigate('/login');
             return;
         }
 
@@ -23,15 +21,15 @@ const UserProtectWrapper = ({ children }) => {
             }
         })
         .then(response => {
-            console.log("API Response:", response.data);
+            
             if (response.status === 200) {
                 setIsLoading(false);
             }
         })
         .catch(err => {
-            console.error("API Error:", err.response ? err.response.data : err);
+           
             localStorage.removeItem('token');
-            navigate('/admin-login');
+            navigate('/login');
         });
     }, [navigate]); // No token in dependency
 
