@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAdmin } from '../../Context/AdminContext';
+import { useAdmin } from '../../context/AdminContext';
 import axios from "axios";
 
 const AdminLogin = () => {

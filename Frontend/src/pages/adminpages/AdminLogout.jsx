@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAdmin } from "../../Context/AdminContext";
+import { useAdmin } from "../../context/AdminContext";
 
 const AdminLogout = () => {
     const navigate = useNavigate();

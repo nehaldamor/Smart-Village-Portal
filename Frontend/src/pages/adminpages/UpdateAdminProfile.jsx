@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useAdmin } from "../../Context/AdminContext";
+import { useAdmin } from "../../context/AdminContext";
 const UpdateAdminProfile = () => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLasntname] = useState('');

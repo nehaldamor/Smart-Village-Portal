@@ -1,5 +1,5 @@
 import React from "react";
-import { useAdmin } from "../../Context/AdminContext";
+import { useAdmin } from "../../context/AdminContext";
 import { Link } from "react-router";
 
 const AdminProfile = () => {

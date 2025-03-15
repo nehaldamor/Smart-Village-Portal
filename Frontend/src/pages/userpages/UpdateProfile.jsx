@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useUser } from "../../Context/userContext";
+import { useUser } from "../../context/userContext";
 const UpdateProfile = () => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLasntname] = useState('');
