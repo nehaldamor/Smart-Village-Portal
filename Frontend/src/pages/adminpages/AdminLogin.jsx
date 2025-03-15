@@ -32,7 +32,7 @@ const AdminLogin = () => {
   };
   
   return (
-    <div className="h-screen overflow-hidden flex items-center justify-center bg-[url(./src/assets/Homepg.jpg)] bg-cover bg-center">
+    <div className="h-screen overflow-hidden flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500  bg-cover bg-center">
       <div className="relative z-10 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-black/50 p-6 sm:p-8 md:p-10 rounded-lg">
         <h2 className="text-2xl md:text-3xl font-semibold text-center text-white mb-6">Admin Login</h2>
         <form onSubmit={submitHandler} className="space-y-4">

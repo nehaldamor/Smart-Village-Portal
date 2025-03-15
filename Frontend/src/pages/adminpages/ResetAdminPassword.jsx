@@ -27,7 +27,7 @@ const ResetAdminPassword = () => {
     };
 
     return (
-        <div className='min-h-screen flex items-center justify-center bg-[url(https://static.vecteezy.com/system/resources/previews/033/408/391/non_2x/a-village-at-sunset-with-thatched-huts-ai-generated-free-photo.jpg)] bg-cover bg-center'>
+        <div className='min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500  bg-cover bg-center'>
             <div className='relative z-10 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-black/50 p-6 sm:p-8 md:p-10 rounded-lg'>
                 <Link to='/' className='text-white text-lg font-semibold bg-gray-800 px-4 py-2 rounded-lg hover:bg-gray-700'>Home</Link>
                 <h1 className='text-2xl md:text-3xl font-semibold text-center text-white mt-4 mb-6'>Reset Password</h1>

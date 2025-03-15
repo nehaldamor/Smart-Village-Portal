@@ -33,7 +33,7 @@ const UserRegistration = () => {
 
   return (
     
-    <div className="h-209 sm:h-178 flex items-center justify-center bg-[url(./src/assets/Homepg.jpg)] bg-cover bg-center">
+    <div className="h-209 sm:h-178 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500  bg-cover bg-center">
     <div className="flex flex-col items-center p-8 py-10 rounded-lg   bg-black/60">
       <h1 className="text-3xl font-bold mb-5 text-white">User Registration</h1>
       <form onSubmit={handleSubmit}>
