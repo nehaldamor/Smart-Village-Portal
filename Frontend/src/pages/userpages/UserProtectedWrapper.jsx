@@ -10,7 +10,7 @@ const UserProtectWrapper = ({ children }) => {
     useEffect(() => {
         if (!token) {
             console.log("No token found, redirecting to login...");
-            navigate('/login');
+            navigate('/admin-login');
             return;
         }
 
